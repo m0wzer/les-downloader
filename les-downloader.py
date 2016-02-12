@@ -5,7 +5,17 @@ import urllib
 import sys
 import argparse
 
+# Print GBanner
+headerBanner = """[#] Linux Exploit Suggester Downloader
+[#]"""
+print headerBanner
+
 # parse args
+if not len(sys.argv) > 1:
+    print "[#] Not enough arguments"
+    print "[#] Exiting..."
+    sys.exit()
+
 argParser = argparse.ArgumentParser()
 inputGroup = argParser.add_mutually_exclusive_group()
 inputGroup.add_argument("-k", "--kernel", help="The kernel version to pass to Linux Exploit Suggestor")
